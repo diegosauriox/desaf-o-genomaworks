@@ -10,7 +10,8 @@ from tipoLugar.models import TipoLugarModel
 
 class LugaresModel(models.Model):
     nombre = models.CharField(max_length=45)
-    ubicacion = models.CharField(max_length=255)
+    pais = models.CharField(max_length=45)
+    ciudad = models.CharField(max_length=45)
     calificacion = models.IntegerField(blank=True, null=True)
     visitado = models.IntegerField()
     id_tipo_lugar = models.ForeignKey(TipoLugarModel, models.DO_NOTHING, db_column='id_tipo_lugar')

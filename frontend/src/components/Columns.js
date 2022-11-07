@@ -1,0 +1,26 @@
+export const Columns=[
+    {
+        Header:'Id',
+        accessor:'id'
+    },
+    {
+        Header:'Nombre',
+        accessor:'nombre'
+    },
+    {
+        Header:'Calificación',
+        accessor:'calificacion'
+    },
+    {
+        Header:'Visitado',
+        accessor:'id'
+    },
+    {
+        Header:'Id',
+        accessor:'id'
+    },
+    {
+        Header:'Id',
+        accessor:'id'
+    },
+]
