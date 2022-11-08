@@ -10,6 +10,6 @@ router = routers.DefaultRouter()
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    #path('eventosMacro/', views.index),
+    path('tipoLugar/', views.getAll),
 
 ]

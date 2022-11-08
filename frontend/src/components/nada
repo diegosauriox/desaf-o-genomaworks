@@ -1,0 +1,35 @@
+<div>
+      <h1>Lista de locales</h1>
+      <table >
+        <thead >
+          <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Tipo del Lugar</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">País</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Calificación</th>
+            <th scope="col">Visitado</th>
+            <th></th>
+            
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          {tiendas.map((tienda, i) => 
+            <tr key={tienda.i}>
+              <td>{i + 1}</td>
+              <td>{tienda.tipoLugar.nombre}</td>
+              <td>{tienda.nombre}</td>
+              <td>{tienda.pais}</td>
+              <td>{tienda.ciudad}</td>
+              <td>{tienda.calificacion}</td>
+              <td>{tienda.visitado==1 ? "Si":"No"}</td>
+              <td><button color="primary" onClick={() => showModal()}>Editar</button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>

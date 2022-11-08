@@ -18,14 +18,14 @@ def index(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['DELETE'])
+@api_view(['GET'])
 def eliminar(request,id):
     lugar= LugaresModel.objects.get(id=id)
     lugar.delete()
     
     return HttpResponse("Eliminado")
 
-@api_view(['PUT'])
+@api_view(['POST'])
 def editar(request,id):
     lugar= LugaresModel.objects.get(id=id)
     serializer=LugaresSerializer(data=request.data, instance=lugar)
@@ -36,26 +36,31 @@ def editar(request,id):
     lugar.id_tipo_lugar=buscarLugar(request.data["id_tipo_lugar"]) 
     lugar.save()
 
-
-    """ lugar.nombre=
-    lugar.ubicacion=
-    lugar.calificacion=
-    lugar.visitado=
-    lugar.id_tipo_lugar=
-    lugar.save()
-     """
     return HttpResponse("editado")
     
+@api_view(['POST'])
+def filtroPais(request):
+    lugar= LugaresModel.objects.all().filter(pais=request.data["pais"])
+    serializer= LugaresSerializer(lugar,many=True)
+    
+    return Response(serializer.data,status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+def paises(request):
+    paises=LugaresModel.objects.values("pais").distinct()
+    return Response(paises,status=status.HTTP_200_OK)
+
 @api_view(['POST'])
 def agregar(request):
     #lugares= LugaresModel.objects.all()
     print(request)
     nombre=request.data["nombre"]
-    ubicacion=request.data["ubicacion"]
+    pais=request.data["pais"]
+    ciudad=request.data["ciudad"]
     calificacion=request.data["calificacion"]
     visitado=request.data["visitado"]
     id_tipo_lugar=buscarLugar(request.data["id_tipo_lugar"]) 
 
-    lugar=LugaresModel(nombre=nombre,ubicacion=ubicacion,calificacion=calificacion,visitado=visitado,id_tipo_lugar=id_tipo_lugar)
+    lugar=LugaresModel(nombre=nombre,pais=pais,ciudad=ciudad,calificacion=calificacion,visitado=visitado,id_tipo_lugar=id_tipo_lugar)
     lugar.save()
     return HttpResponse("guardado")

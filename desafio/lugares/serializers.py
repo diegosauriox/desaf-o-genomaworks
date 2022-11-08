@@ -7,4 +7,4 @@ class LugaresSerializer(serializers.ModelSerializer):
     tipoLugar = TipoLugarSerializer(source="*")
     class Meta:
         model = LugaresModel
-        fields = ('id','nombre', 'ubicacion', 'calificacion', 'visitado', 'tipoLugar')
+        fields = ('id','nombre', 'pais','ciudad', 'calificacion', 'visitado', 'tipoLugar')

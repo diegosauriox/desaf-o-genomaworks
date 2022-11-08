@@ -2,6 +2,8 @@ import React,{useState,useEffect} from "react";
 import ReactDOM from "react-dom/client";
 
 import {Tabla} from './components/Tabla'
+import {SortingTabla} from './components/SortingTabla'
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //jsx html+js
@@ -46,6 +48,6 @@ root.render(
     })} */}
     {/* <Button/> */}
     {/* <Contador/> */}
-    <Tabla/>
+    <SortingTabla/>
   </>
 );

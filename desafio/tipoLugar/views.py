@@ -16,3 +16,8 @@ def buscarLugar(id):
     
     return tipoLugar
 
+@api_view(['GET'])
+def getAll(request):
+    tipoLugar= TipoLugarModel.objects.all()
+    serializer= TipoLugarSerializer(tipoLugar,many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

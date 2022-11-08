@@ -14,6 +14,7 @@ urlpatterns = [
     path('eliminarLugar/<id>', views.eliminar),
     path('editarLugar/<id>', views.editar),
     path('agregarLugar', views.agregar),
-    
+    path('filtroPais/', views.filtroPais),
+    path('paises/', views.paises),
     
 ]
