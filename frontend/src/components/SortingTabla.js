@@ -124,6 +124,7 @@ export function SortingTabla() {
       .catch((error) => console.error(error));
     setModalInsertar(false);
     getTiendas();
+    getPaises()
   };
   const getTiendas = async () => {
     const response = await fetch("http://127.0.0.1:8000/api/listaLugares/")
@@ -398,7 +399,7 @@ export function SortingTabla() {
             ></Input>
           </FormGroup>
           <FormGroup>
-            <label>Comidas</label>
+            <label>Comidas y/o Bebestibles </label>
             <Input
               required
               type={"textarea"}

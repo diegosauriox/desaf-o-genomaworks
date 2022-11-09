@@ -36,7 +36,7 @@ export const COLUMNS=[
         Filter: ColumnFilter
     },
     {
-        Header:'Comidas',
+        Header:'Comidas y/o Bebestibles',
         accessor:'comidas',
         Filter: ColumnFilter
     },
