@@ -291,7 +291,7 @@ export function SortingTabla() {
               filtrarPais();
             }}
           >
-            filtrar
+            Filtrar
           </Button>
           {"   "}
           <Button
