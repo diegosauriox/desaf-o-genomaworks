@@ -596,7 +596,7 @@ export function SortingTabla() {
         </ModalHeader>
         <ModalBody>
           <FormGroup>
-            <label>eliminar {nombreTienda}</label>
+            <label>Eliminar: {nombreTienda}</label>
           </FormGroup>
         </ModalBody>
         <ModalFooter>
