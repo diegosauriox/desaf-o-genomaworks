@@ -1,4 +1,4 @@
-# desaf-o-genomaworks
+# desafio-genomaworks
 
 #Backend
 1) pip install django-cors-headers
