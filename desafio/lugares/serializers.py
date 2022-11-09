@@ -4,7 +4,6 @@ from .models import LugaresModel
 from tipoLugar.serializers import TipoLugarSerializer
 
 class LugaresSerializer(serializers.ModelSerializer):
-    tipoLugar = TipoLugarSerializer(source="*")
     class Meta:
         model = LugaresModel
-        fields = ('id','nombre', 'pais','ciudad', 'calificacion', 'visitado', 'tipoLugar')
+        fields = ('id','nombre', 'pais','ciudad', 'calificacion', 'visitado', "comidas",'tipoLugar' )

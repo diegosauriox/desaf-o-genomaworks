@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lugares.apps.LugaresConfig',
-    "comidaLugares.apps.ComidalugaresConfig",
-    "comidas.apps.ComidasConfig",
     "tipoLugar.apps.TipolugarConfig",
     'rest_framework',
     'corsheaders',

@@ -14,7 +14,8 @@ class LugaresModel(models.Model):
     ciudad = models.CharField(max_length=45)
     calificacion = models.IntegerField(blank=True, null=True)
     visitado = models.IntegerField()
-    id_tipo_lugar = models.ForeignKey(TipoLugarModel, models.DO_NOTHING, db_column='id_tipo_lugar')
+    tipoLugar = models.CharField(max_length=45)
+    comidas = models.TextField(blank = True)
 
     class Meta:
         managed = False

@@ -9,12 +9,14 @@ from rest_framework import status
 from .models import LugaresModel
 from .serializers import LugaresSerializer
 from tipoLugar.views import buscarLugar
+from tipoLugar.models import TipoLugarModel
 # Create your views here.
+
 @api_view(['GET'])
 def index(request):
     lugares= LugaresModel.objects.all()
     serializer = LugaresSerializer(lugares,many=True)
-    
+     
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -33,7 +35,9 @@ def editar(request,id):
     lugar.ciudad=request.data["ciudad"]
     lugar.calificacion=request.data["calificacion"]
     lugar.visitado=request.data["visitado"]
-    lugar.id_tipo_lugar=buscarLugar(request.data["id_tipo_lugar"]) 
+    lugar.comidas=request.data["comidas"]
+    lugar.tipoLugar=request.data["tipoLugar"]
+    
     lugar.save()
 
     return HttpResponse("editado")
@@ -59,8 +63,10 @@ def agregar(request):
     ciudad=request.data["ciudad"]
     calificacion=request.data["calificacion"]
     visitado=request.data["visitado"]
-    id_tipo_lugar=buscarLugar(request.data["id_tipo_lugar"]) 
+    comidas=request.data["comidas"]
+    tipoLugar=request.data["tipoLugar"]
+    
 
-    lugar=LugaresModel(nombre=nombre,pais=pais,ciudad=ciudad,calificacion=calificacion,visitado=visitado,id_tipo_lugar=id_tipo_lugar)
+    lugar=LugaresModel(nombre=nombre,pais=pais,ciudad=ciudad,calificacion=calificacion,visitado=visitado,tipoLugar=tipoLugar,comidas=comidas)
     lugar.save()
     return HttpResponse("guardado")

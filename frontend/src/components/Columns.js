@@ -1,7 +1,10 @@
 import { Button } from "bootstrap"
 import {ColumnFilter} from "./ColumnFilter"
 
-
+import {
+   
+    Input
+  } from "reactstrap";
 
 
 export const COLUMNS=[
@@ -14,7 +17,7 @@ export const COLUMNS=[
     },
     {
         Header:'Tipo del Lugar',
-        accessor:'tipoLugar.nombre',
+        accessor:'tipoLugar',
         Filter: ColumnFilter
     },
     {
@@ -32,6 +35,11 @@ export const COLUMNS=[
         accessor:'ciudad',
         Filter: ColumnFilter
     },
+    {
+        Header:'Comidas',
+        accessor:'comidas',
+        Filter: ColumnFilter
+    },
    
     {
         Header:'Calificación',
@@ -40,9 +48,11 @@ export const COLUMNS=[
     },
     {
         Header:'Visitado',
-        accessor:(data)=>data.visitado==1 ? "Si":"No",
+        accessor:(data)=>data.visitado==1 ? <Input type="checkbox" readOnly checked={true} disabled></Input>:<Input type="checkbox" readOnly checked={false} disabled></Input>,
         Filter: ColumnFilter
     },
+    
+    
     /* {
         Header:'Opciones',
         Cell:({row})=><div><button onClick={()=>{console.log(row.values.nombre)}}>hola</button><button>eliminar</button></div>
